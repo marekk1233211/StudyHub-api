@@ -68,7 +68,9 @@ const upload = multer({ storage });
 router.get("/", (req, res, next) => {
   res.render("index", { title: "Express" });
 });
-
+router.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
 // register endpoint
 router.post("/register", (request, response) => {
   // hash the password
