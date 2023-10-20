@@ -312,4 +312,8 @@ router.delete("/delete-account/:userId", async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 });
+router.get("/tutorIn", (req, res) => {
+  // Tutaj umieść kod do renderowania strony dla '/tutorIn'
+  // res.sendFile(__dirname + '/public/tutorIn.html');
+});
 module.exports = router;
