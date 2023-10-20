@@ -68,9 +68,6 @@ const upload = multer({ storage });
 router.get("/", (req, res, next) => {
   res.render("index", { title: "Express" });
 });
-router.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
 // register endpoint
 router.post("/register", (request, response) => {
   // hash the password
@@ -317,5 +314,8 @@ router.delete("/delete-account/:userId", async (req, res) => {
 router.get("/tutorIn", (req, res) => {
   // Tutaj umieść kod do renderowania strony dla '/tutorIn'
   // res.sendFile(__dirname + '/public/tutorIn.html');
+});
+router.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 module.exports = router;
