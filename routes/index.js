@@ -16,7 +16,10 @@ const checkStatusTutor = require("../middlewares/authMiddleware3");
 
 // middleware to handle CORS request
 router.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3001");
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://studyhub-rmr6.onrender.com"
+  );
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
   res.setHeader("Access-Control-Allow-Credentials", true);
@@ -24,7 +27,7 @@ router.use((req, res, next) => {
 });
 // middleware to handle frontend on 3001 port
 const corsOptions = {
-  origin: "http://localhost:3001",
+  origin: "https://studyhub-rmr6.onrender.com",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
   optionsSuccessStatus: 204,
