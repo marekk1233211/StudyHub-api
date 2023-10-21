@@ -311,11 +311,10 @@ router.delete("/delete-account/:userId", async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 });
-router.get("/tutorIn", (req, res) => {
-  // Tutaj umieść kod do renderowania strony dla '/tutorIn'
-  // res.sendFile(__dirname + '/public/tutorIn.html');
-});
-router.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+// router.get("/*", function (req, res) {
+//   res.sendFile(path.join(__dirname, "build", "index.html"));
+// });
+router.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html")); // Tutaj podaj odpowiednią ścieżkę do pliku HTML twojej głównej strony
 });
 module.exports = router;
